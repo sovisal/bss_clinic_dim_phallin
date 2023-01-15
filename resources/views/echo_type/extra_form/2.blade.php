@@ -1,45 +1,17 @@
 <tr>
-	<td width="30%" class="text-right">ទារកមានចំនួន</td>
+	<td width="30%" class="text-right">{{ __('form.echography.baby_count') }}</td>
 	<td>
-		<x-bss-form.input name="baby_count" :value="old('baby_count', !empty($row) && $row->baby_count ? $row->baby_count : '')"/>
+		<x-bss-form.input name="baby_count" :value="old('baby_count', !empty($row) && $row->baby_count ? $row->baby_count : '1 និង មានថង់ទឹកកូន 1')"/>
 	</td>
 </tr>
 <tr>
-	<td width="30%" class="text-right">ភេទ</td>
+	<td width="30%" class="text-right">{{ __('form.echography.baby_health') }}</td>
 	<td>
-		<x-bss-form.select name="gender">
-			<option value="ប្រុស" {{ ((old('gender', $row->gender) == 'ប្រុស')? 'selected' : '') }}>ប្រុស</option>
-			<option value="ស្រី" {{ ((old('gender', $row->gender) == 'ស្រី')? 'selected' : '') }}>ស្រី</option>
-			<option value="ស្រី១ប្រុស១" {{ ((old('gender', $row->gender) == 'ស្រី១ប្រុស១')? 'selected' : '') }}>ស្រី១ប្រុស១</option>
-			<option value="ស្រី២" {{ ((old('gender', $row->gender) == 'ស្រី២')? 'selected' : '') }}>ស្រី២</option>
-			<option value="ប្រុស២" {{ ((old('gender', $row->gender) == 'ប្រុស២')? 'selected' : '') }}>ប្រុស២</option>
-			<option value="-" {{ ((old('gender', $row->gender) == '-')? 'selected' : '') }}>-</option>
-		</x-bss-form.select>
+		<x-bss-form.input name="baby_health" :value="old('baby_health', !empty($row) && $row->baby_health ? $row->baby_health : '')"/>
 	</td>
 </tr>
 <tr>
-	<td width="30%" class="text-right">ទារកស្ថិតនៅ</td>
-	<td>
-		<x-bss-form.select name="baby_location">
-			<option value="ខាងក្នុងស្បូន" {{ ((old('baby_location', $row->baby_location) == 'ខាងក្នុងស្បូន')? 'selected' : '') }}>ខាងក្នុងស្បូន</option>
-			<option value="ក្រៅស្បូន" {{ ((old('baby_location', $row->baby_location) == 'ក្រៅស្បូន')? 'selected' : '') }}>ក្រៅស្បូន</option>
-			<option value="-" {{ ((old('baby_location', $row->baby_location) == '-')? 'selected' : '') }}>-</option>
-		</x-bss-form.select>
-	</td>
-</tr>
-<tr>
-	<td width="30%" class="text-right">មានចលនាបំរះ</td>
-	<td>
-		<x-bss-form.select name="baby_movement">
-			<option value="ធម្មតា" {{ ((old('baby_movement', $row->baby_movement) == 'ធម្មតា')? 'selected' : '') }}>ធម្មតា</option>
-			<option value="ខ្សោយ" {{ ((old('baby_movement', $row->baby_movement) == 'ខ្សោយ')? 'selected' : '') }}>ខ្សោយ</option>
-			<option value="អត់" {{ ((old('baby_movement', $row->baby_movement) == 'អត់')? 'selected' : '') }}>អត់</option>
-			<option value="-" {{ ((old('baby_movement', $row->baby_movement) == '-')? 'selected' : '') }}>-</option>
-		</x-bss-form.select>
-	</td>
-</tr>
-<tr>
-	<td class="text-right">ចលនាបេះដូង</td>
+	<td class="text-right">{{ __('form.echography.heart_rate') }}</td>
 	<td>
 		<div class="row">
 			<div class="col-sm-4">
@@ -55,138 +27,7 @@
 	</td>
 </tr>
 <tr>
-	<td width="30%" class="text-right">ឆ្អឹងក្បាល</td>
-	<td>
-		<x-bss-form.select name="skull">
-			<option value="ធម្មតា" {{ ((old('skull', $row->skull) == 'ធម្មតា')? 'selected' : '') }}>ធម្មតា</option>
-			<option value="មិនធម្មតា" {{ ((old('skull', $row->skull) == 'មិនធម្មតា')? 'selected' : '') }}>មិនធម្មតា</option>
-			<option value="-" {{ ((old('skull', $row->skull) == '-')? 'selected' : '') }}>-</option>
-		</x-bss-form.select>
-	</td>
-</tr>
-<tr>
-	<td width="30%" class="text-right">កញ្ចឹងក</td>
-	<td>
-		<x-bss-form.select name="baby_neck">
-			<option value="ធម្មតា" {{ ((old('baby_neck', $row->baby_neck) == 'ធម្មតា')? 'selected' : '') }}>ធម្មតា</option>
-			<option value="មិនធម្មតា" {{ ((old('baby_neck', $row->baby_neck) == 'មិនធម្មតា')? 'selected' : '') }}>មិនធម្មតា</option>
-			<option value="-" {{ ((old('baby_neck', $row->baby_neck) == '-')? 'selected' : '') }}>-</option>
-		</x-bss-form.select>
-	</td>
-</tr>
-<tr>
-	<td width="30%" class="text-right">ឆ្អឹងខ្នង</td>
-	<td>
-		<x-bss-form.select name="spine">
-			<option value="ធម្មតា" {{ ((old('spine', $row->spine) == 'ធម្មតា')? 'selected' : '') }}>ធម្មតា</option>
-			<option value="មិនធម្មតា" {{ ((old('spine', $row->spine) == 'មិនធម្មតា')? 'selected' : '') }}>មិនធម្មតា</option>
-			<option value="-" {{ ((old('spine', $row->spine) == '-')? 'selected' : '') }}>-</option>
-		</x-bss-form.select>
-	</td>
-</tr>
-<tr>
-	<td width="30%" class="text-right">ប្លោកនោម</td>
-	<td>
-		<x-bss-form.select name="baby_bladder">
-			<option value="ធម្មតា" {{ ((old('baby_bladder', $row->baby_bladder) == 'ធម្មតា')? 'selected' : '') }}>ធម្មតា</option>
-			<option value="មិនធម្មតា" {{ ((old('baby_bladder', $row->baby_bladder) == 'មិនធម្មតា')? 'selected' : '') }}>មិនធម្មតា</option>
-			<option value="-" {{ ((old('baby_bladder', $row->baby_bladder) == '-')? 'selected' : '') }}>-</option>
-		</x-bss-form.select>
-	</td>
-</tr>
-<tr>
-	<td width="30%" class="text-right">ផ្ចិត(ផ្ទៃពោះ)</td>
-	<td>
-		<x-bss-form.select name="umbilical_cord_pregnancy">
-			<option value="ធម្មតា" {{ ((old('umbilical_cord_pregnancy', $row->umbilical_cord_pregnancy) == 'ធម្មតា')? 'selected' : '') }}>ធម្មតា</option>
-			<option value="មិនធម្មតា" {{ ((old('umbilical_cord_pregnancy', $row->umbilical_cord_pregnancy) == 'មិនធម្មតា')? 'selected' : '') }}>មិនធម្មតា</option>
-			<option value="-" {{ ((old('umbilical_cord_pregnancy', $row->umbilical_cord_pregnancy) == '-')? 'selected' : '') }}>-</option>
-		</x-bss-form.select>
-	</td>
-</tr>
-<tr>
-	<td width="30%" class="text-right">អវៈយវៈ</td>
-	<td>
-		<x-bss-form.select name="limbs">
-			<option value="ធម្មតា" {{ ((old('limbs', $row->limbs) == 'ធម្មតា')? 'selected' : '') }}>ធម្មតា</option>
-			<option value="មិនធម្មតា" {{ ((old('limbs', $row->limbs) == 'មិនធម្មតា')? 'selected' : '') }}>មិនធម្មតា</option>
-			<option value="-" {{ ((old('limbs', $row->limbs) == '-')? 'selected' : '') }}>-</option>
-		</x-bss-form.select>
-	</td>
-</tr>
-<tr>
-	<td width="30%" class="text-right">ទំហំថង់ទឹកភ្លោះ</td>
-	<td>
-		<x-bss-form.select name="amniotic_fluid_size">
-			<option value="ធម្មតា" {{ ((old('amniotic_fluid_size', $row->amniotic_fluid_size) == 'ធម្មតា')? 'selected' : '') }}>ធម្មតា</option>
-			<option value="មិនធម្មតា" {{ ((old('amniotic_fluid_size', $row->amniotic_fluid_size) == 'មិនធម្មតា')? 'selected' : '') }}>មិនធម្មតា</option>
-			<option value="-" {{ ((old('amniotic_fluid_size', $row->amniotic_fluid_size) == '-')? 'selected' : '') }}>-</option>
-		</x-bss-form.select>
-	</td>
-</tr>
-<tr>
-	<td class="text-right">ប្រវែងពីក្បាលដល់គូថ</td>
-	<td>
-		<div class="row">
-			<div class="col-sm-4">
-				<x-bss-form.input name="head_to_butt_length" class="is_number" :value="old('head_to_butt_length', !empty($row) && $row->head_to_butt_length ? $row->head_to_butt_length : '')"/>
-			</div>
-			<div class="col-sm-4 pl-0">
-				<x-bss-form.select name="head_to_butt_length_unit">
-					<option value="មម" {{ ((old('head_to_butt_length_unit', $row->head_to_butt_length_unit) == 'មម')? 'selected' : '') }}>មម</option>
-					<option value="-" {{ ((old('head_to_butt_length_unit', $row->head_to_butt_length_unit) == '-')? 'selected' : '') }}>-</option>
-				</x-bss-form.select>
-			</div>
-		</div>
-	</td>
-</tr>
-<tr>
-	<td class="text-right">ប្រវែងទទឹងក្បាល</td>
-	<td>
-		<div class="row">
-			<div class="col-sm-4">
-				<x-bss-form.input name="head_width" class="is_number" :value="old('head_width', !empty($row) && $row->head_width ? $row->head_width : '')"/>
-			</div>
-			<div class="col-sm-4 pl-0">
-				<x-bss-form.select name="head_width_unit">
-					<option value="មម" {{ ((old('head_width_unit', $row->head_width_unit) == 'មម')? 'selected' : '') }}>មម</option>
-					<option value="-" {{ ((old('head_width_unit', $row->head_width_unit) == '-')? 'selected' : '') }}>-</option>
-				</x-bss-form.select>
-			</div>
-		</div>
-	</td>
-</tr>
-<tr>
-	<td class="text-right">ប្រវែងឆ្អឹងភ្លៅ</td>
-	<td>
-		<div class="row">
-			<div class="col-sm-4">
-				<x-bss-form.input name="thigh_length" class="is_number" :value="old('thigh_length', !empty($row) && $row->thigh_length ? $row->thigh_length : '')"/>
-			</div>
-			<div class="col-sm-4 pl-0">
-				<x-bss-form.select name="thigh_length_unit">
-					<option value="មម" {{ ((old('thigh_length_unit', $row->thigh_length_unit) == 'មម')? 'selected' : '') }}>មម</option>
-					<option value="-" {{ ((old('thigh_length_unit', $row->thigh_length_unit) == '-')? 'selected' : '') }}>-</option>
-				</x-bss-form.select>
-			</div>
-		</div>
-	</td>
-</tr>
-<tr>
-	<td width="30%" class="text-right">សុកមានទីតាំងនៅ</td>
-	<td>
-		<x-bss-form.select name="placenta_location">
-			<option value="ខាងក្រោយ" {{ ((old('placenta_location', $row->placenta_location) == 'ខាងក្រោយ')? 'selected' : '') }}>ខាងក្រោយ</option>
-			<option value="ខាងមុខ" {{ ((old('placenta_location', $row->placenta_location) == 'ខាងមុខ')? 'selected' : '') }}>ខាងមុខ</option>
-			<option value="បាតស្បូន" {{ ((old('placenta_location', $row->placenta_location) == 'បាតស្បូន')? 'selected' : '') }}>បាតស្បូន</option>
-			<option value="ពាំងមាតស្បូនខាងមុខកំរិតទី" {{ ((old('placenta_location', $row->placenta_location) == 'ពាំងមាតស្បូនខាងមុខកំរិតទី')? 'selected' : '') }}>ពាំងមាតស្បូនខាងមុខកំរិតទី</option>
-			<option value="ពាំងមាតស្បូនខាងក្រោយកំរិតទី" {{ ((old('placenta_location', $row->placenta_location) == 'ពាំងមាតស្បូនខាងក្រោយកំរិតទី')? 'selected' : '') }}>ពាំងមាតស្បូនខាងក្រោយកំរិតទី</option>
-			<option value="-" {{ ((old('placenta_location', $row->placenta_location) == '-')? 'selected' : '') }}>-</option>
-		</x-bss-form.select>
-	</td>
-</tr>
-<tr>
-	<td width="30%" class="text-right">ទឹកភ្លោះមានបរិមាណ</td>
+	<td width="30%" class="text-right">{{ __('form.echography.amniotic_fluid_quantity') }}</td>
 	<td>
 		<x-bss-form.select name="amniotic_fluid_quantity">
 			<option value="ធម្មតា" {{ ((old('amniotic_fluid_quantity', $row->amniotic_fluid_quantity) == 'ធម្មតា')? 'selected' : '') }}>ធម្មតា</option>
@@ -197,28 +38,39 @@
 	</td>
 </tr>
 <tr>
-	<td width="30%" class="text-right">សាច់ស្បូន</td>
+	<td class="text-right">{{ __('form.echography.gs') }}</td>
 	<td>
-		<x-bss-form.select name="uterine_meat">
-			<option value="ធម្មតា" {{ ((old('uterine_meat', $row->uterine_meat) == 'ធម្មតា')? 'selected' : '') }}>ធម្មតា</option>
-			<option value="មានដុំសាច់" {{ ((old('uterine_meat', $row->uterine_meat) == 'មានដុំសាច់')? 'selected' : '') }}>មានដុំសាច់</option>
-			<option value="-" {{ ((old('uterine_meat', $row->uterine_meat) == '-')? 'selected' : '') }}>-</option>
-		</x-bss-form.select>
+		<div class="row">
+			<div class="col-sm-4">
+				<x-bss-form.input name="gs" class="is_number" :value="old('gs', !empty($row) && $row->gs ? $row->gs : '')"/>
+			</div>
+			<div class="col-sm-4 pl-0">
+				<x-bss-form.select name="gs_unit">
+					<option value="mm" {{ ((old('gs_unit', $row->gs_unit) == 'មម')? 'selected' : '') }}>មម</option>
+					<option value="-" {{ ((old('gs_unit', $row->gs_unit) == '-')? 'selected' : '') }}>-</option>
+				</x-bss-form.select>
+			</div>
+		</div>
 	</td>
 </tr>
 <tr>
-	<td width="30%" class="text-right">ដៃស្បូន</td>
+	<td class="text-right">{{ __('form.echography.crl') }}</td>
 	<td>
-		<x-bss-form.select name="uterine_tube">
-			<option value="ធម្មតា" {{ ((old('uterine_tube', $row->uterine_tube) == 'ធម្មតា')? 'selected' : '') }}>ធម្មតា</option>
-			<option value="មានដុំគីសខាងស្ដាំ" {{ ((old('uterine_tube', $row->uterine_tube) == 'មានដុំគីសខាងស្ដាំ')? 'selected' : '') }}>មានដុំគីសខាងស្ដាំ</option>
-			<option value="មានដុំគីសខាងឆ្វេង" {{ ((old('uterine_tube', $row->uterine_tube) == 'មានដុំគីសខាងឆ្វេង')? 'selected' : '') }}>មានដុំគីសខាងឆ្វេង</option>
-			<option value="-" {{ ((old('uterine_tube', $row->uterine_tube) == '-')? 'selected' : '') }}>-</option>
-		</x-bss-form.select>
+		<div class="row">
+			<div class="col-sm-4">
+				<x-bss-form.input name="crl" class="is_number" :value="old('crl', !empty($row) && $row->crl ? $row->crl : '')"/>
+			</div>
+			<div class="col-sm-4 pl-0">
+				<x-bss-form.select name="crl_unit">
+					<option value="mm" {{ ((old('crl_unit', $row->crl_unit) == 'មម')? 'selected' : '') }}>មម</option>
+					<option value="-" {{ ((old('crl_unit', $row->crl_unit) == '-')? 'selected' : '') }}>-</option>
+				</x-bss-form.select>
+			</div>
+		</div>
 	</td>
 </tr>
 <tr>
-	<td class="text-right">គក៌មានអាយុ</td>
+	<td class="text-right">{{ __('form.echography.pregnancy_age1') }}</td>
 	<td>
 		<div class="row">
 			<div class="col-sm-4">
@@ -226,7 +78,7 @@
 			</div>
 			<div class="col-sm-4 pl-0">
 				<x-bss-form.select name="pregnancy_age1_unit">
-					<option value="week" {{ ((old('pregnancy_age1_unit', $row->pregnancy_age1_unit) == 'សប្ដាហ៍')? 'selected' : '') }}>សប្ដាហ៍</option>
+					<option value="សប្ដាហ៍" {{ ((old('pregnancy_age1_unit', $row->pregnancy_age1_unit) == 'សប្ដាហ៍')? 'selected' : '') }}>សប្ដាហ៍</option>
 					<option value="-" {{ ((old('pregnancy_age1_unit', $row->pregnancy_age1_unit) == '-')? 'selected' : '') }}>-</option>
 				</x-bss-form.select>
 			</div>
@@ -234,7 +86,7 @@
 	</td>
 </tr>
 <tr>
-	<td class="text-right">និង</td>
+	<td class="text-right">{{ __('form.echography.pregnancy_age2') }}</td>
 	<td>
 		<div class="row">
 			<div class="col-sm-4">
@@ -242,7 +94,7 @@
 			</div>
 			<div class="col-sm-4 pl-0">
 				<x-bss-form.select name="pregnancy_age2_unit">
-					<option value="day" {{ ((old('pregnancy_age2_unit', $row->pregnancy_age2_unit) == 'ថ្ងៃ')? 'selected' : '') }}>ថ្ងៃ</option>
+					<option value="ថ្ងៃ" {{ ((old('pregnancy_age2_unit', $row->pregnancy_age2_unit) == 'ថ្ងៃ')? 'selected' : '') }}>ថ្ងៃ</option>
 					<option value="-" {{ ((old('pregnancy_age2_unit', $row->pregnancy_age2_unit) == '-')? 'selected' : '') }}>-</option>
 				</x-bss-form.select>
 			</div>
@@ -250,12 +102,54 @@
 	</td>
 </tr>
 <tr>
-	<td width="30%" class="text-right">ទារកនឹងកើតថ្ងៃទី</td>
+	<td width="30%" class="text-right">{{ __('form.echography.bady_date_of_birth') }}</td>
 	<td>
 		<x-bss-form.input name="bady_date_of_birth" class="date-picker" hasIcon="right" icon="bx bx-calendar" :value="old('bady_date_of_birth', !empty($row) && $row->bady_date_of_birth ? $row->bady_date_of_birth : '')"/>
 	</td>
 </tr>
 <tr>
+	<td width="30%" class="text-right">{{ __('form.echography.next_meeting') }}</td>
+	<td>
+		<x-bss-form.input name="next_meeting" class="date-picker" hasIcon="right" icon="bx bx-calendar" :value="old('next_meeting', !empty($row) && $row->next_meeting ? $row->next_meeting : '')"/>
+	</td>
+</tr>
+{{-- <tr>
+	<td width="30%" class="text-right">HR ចង្វាក់បេះដូង</td>
+	<td>
+		<x-bss-form.input name="hr_heart_rate" :value="old('hr_heart_rate', !empty($row) && $row->hr_heart_rate ? $row->hr_heart_rate : '')"/>
+	</td>
+</tr> --}}
+{{-- <tr>
+	<td width="30%" class="text-right">VO</td>
+	<td>
+		<x-bss-form.input name="vo" :value="old('vo', !empty($row) && $row->vo ? $row->vo : '')"/>
+	</td>
+</tr> --}}
+{{-- <tr>
+	<td width="30%" class="text-right">ចង្វាក់បេះដូង</td>
+	<td>
+		<x-bss-form.input name="heart_rate" :value="old('heart_rate', !empty($row) && $row->heart_rate ? $row->heart_rate : '')"/>
+	</td>
+</tr> --}}
+{{-- <tr>
+	<td width="30%" class="text-right">សសៃឈាម</td>
+	<td>
+		<x-bss-form.input name="blood_vessels" :value="old('blood_vessels', !empty($row) && $row->blood_vessels ? $row->blood_vessels : '')"/>
+	</td>
+</tr>
+<tr>
+	<td width="30%" class="text-right">ដៃស្បូន</td>
+	<td>
+		<x-bss-form.input name="uterine_tube" :value="old('uterine_tube', !empty($row) && $row->uterine_tube ? $row->uterine_tube : 'ល្អ អត់មានដុំទឹក រឺដុំសាច់')"/>
+	</td>
+</tr> --}}
+{{-- <tr>
+	<td width="30%" class="text-right">ការលូតលាស់</td>
+	<td>
+		<x-bss-form.input name="growth" :value="old('growth', !empty($row) && $row->growth ? $row->growth : '')"/>
+	</td>
+</tr> --}}
+{{-- <tr>
 	<td class="text-right">មុន/ក្រោយ</td>
 	<td>
 		<div class="row">
@@ -270,4 +164,4 @@
 			</div>
 		</div>
 	</td>
-</tr>
+</tr> --}}
