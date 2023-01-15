@@ -90,6 +90,12 @@ class PatientController extends Controller
      */
     public function store(PatientRequest $request)
     {
+        if ($request->ajax()) {
+            $request->merge([
+                'name_en' => $request->name,
+                'name_kh' => $request->name,
+            ]);
+        }
         $address_id = update4LevelAddress($request);
         $patient = Patient::create($this->compileRequestColumns($request, $address_id));
         if ($patient) {
