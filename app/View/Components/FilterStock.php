@@ -2,18 +2,17 @@
 
 namespace App\View\Components;
 
-use App\Models\Patient;
 use Illuminate\View\Component;
+use App\Models\Inventory\Product;
 
-class ReportFilter extends Component
+class FilterStock extends Component
 {
-
     public $url;
 
     /**
      * Create a new component instance.
      */
-    public function __construct($url)
+    public function __construct($url = '')
     {
         $this->url = $url;
     }
@@ -23,7 +22,7 @@ class ReportFilter extends Component
      */
     public function render()
     {
-        $data['patient'] = Patient::where('id', request()->ft_patient_id)->get();
-        return view('components.para-clinic.report-filter', $data);
+        $data['products'] = Product::where('id', request()->ft_product_id)->get();
+        return view('components.filter-stock', $data);
     }
 }

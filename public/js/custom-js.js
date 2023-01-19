@@ -1238,52 +1238,51 @@ $(document).ready(function () {
     // );
 
     // Selection patient when search with no result and press Enter key, then auto create
-    $(document).on(
-        "keyup",
-        'select[name="patient_id"] + span + span input.select2-search__field',
-        function (e) {
-            if (e.keyCode === 13) {
-                let current_select = $(this);
-                if (current_select.val()) {
-                    var CSRF_TOKEN = $('meta[name="csrf-token"]').attr(
-                        "content"
-                    );
-                    $.ajax({
-                        url: window.route_patient,
-                        type: "POST",
-                        data: {
-                            _token: CSRF_TOKEN,
-                            name_en: current_select.val(),
-                            name_kh: current_select.val(),
-                            registered_at: window.today,
-                        },
-                        dataType: "JSON",
-                        success: function (data) {
-                            if (data.id) {
-                                let newOption = new Option(
-                                    current_select.val(),
-                                    data.id,
-                                    false,
-                                    false
-                                );
-                                $('select[name="patient_id"').append(newOption);
-                                current_select
-                                    .closest("tr")
-                                    .find('select[name="patient_id"]')
-                                    .val(data.id)
-                                    .trigger("change");
-                            }
-                        },
-                    });
-                }
-            }
-        }
-    );
+    // $(document).on(
+    //     "keyup",
+    //     'select[name="patient_id"] + span + span input.select2-search__field',
+    //     function (e) {
+    //         if (e.keyCode === 13) {
+    //             let current_select = $(this);
+    //             if (current_select.val()) {
+    //                 var CSRF_TOKEN = $('meta[name="csrf-token"]').attr(
+    //                     "content"
+    //                 );
+    //                 $.ajax({
+    //                     url: window.route_patient,
+    //                     type: "POST",
+    //                     data: {
+    //                         _token: CSRF_TOKEN,
+    //                         name_en: current_select.val(),
+    //                         name_kh: current_select.val(),
+    //                         registered_at: window.today,
+    //                     },
+    //                     dataType: "JSON",
+    //                     success: function (data) {
+    //                         if (data.id) {
+    //                             let newOption = new Option(
+    //                                 current_select.val(),
+    //                                 data.id,
+    //                                 false,
+    //                                 false
+    //                             );
+    //                             $('select[name="patient_id"').append(newOption);
+    //                             current_select
+    //                                 .closest("tr")
+    //                                 .find('select[name="patient_id"]')
+    //                                 .val(data.id)
+    //                                 .trigger("change");
+    //                         }
+    //                     },
+    //                 });
+    //             }
+    //         }
+    //     }
+    // );
 
     $('.select2Ajx').each(function (i) {
         $_this = $('.select2Ajx').eq(i);
         $_this.select2({
-            // minimumInputLength: 3,
             width: "100%",
             ajax: {
                 url: $_this.data('url'),
@@ -1331,4 +1330,13 @@ $(document).ready(function () {
         });
     });
 
+    $(document).on(
+        'change',
+        '.filter-input',
+        function(){
+            if ($('#form-filter').length) {
+                $('#form-filter').submit();
+            }
+        }
+    );
 });
