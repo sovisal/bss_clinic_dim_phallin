@@ -220,6 +220,13 @@ table tfoot {
 	font-weight: bold;
 	margin: 10px 0;
 }
+.print-preview-a4 .echography-body .title-pregnant {
+    font-family: 'Khmer OS Moul Light';
+	font-weight: normal;
+}
+.print-preview-a4 .echography-body .table-echo-pregnant td{
+    padding-bottom: 10px;
+}
 
 .print-preview-a4 .prescription-body small,
 .print-preview-a4 .prescription-body small b {

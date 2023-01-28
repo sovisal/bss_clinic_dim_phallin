@@ -19,7 +19,7 @@
 			</div>
 			<div class="col-sm-4 pl-0">
 				<x-bss-form.select name="heart_rate_unit">
-					<option value="ដង/នាទី" {{ ((old('heart_rate_unit', $row->heart_rate_unit) == 'ដង/នាទី')? 'selected' : '') }}>ដង/នាទី</option>
+					<option value="ដងក្នុង1នាទី" {{ ((old('heart_rate_unit', $row->heart_rate_unit) == 'ដងក្នុង1នាទី')? 'selected' : '') }}>ដងក្នុង1នាទី</option>
 					<option value="-" {{ ((old('heart_rate_unit', $row->heart_rate_unit) == '-')? 'selected' : '') }}>-</option>
 				</x-bss-form.select>
 			</div>
@@ -104,64 +104,12 @@
 <tr>
 	<td width="30%" class="text-right">{{ __('form.echography.bady_date_of_birth') }}</td>
 	<td>
-		<x-bss-form.input name="bady_date_of_birth" class="date-picker" hasIcon="right" icon="bx bx-calendar" :value="old('bady_date_of_birth', !empty($row) && $row->bady_date_of_birth ? $row->bady_date_of_birth : '')"/>
+		<x-bss-form.input name="bady_date_of_birth" class="date-picker" data-format="DD - MM - YYYY" hasIcon="right" icon="bx bx-calendar" :value="old('bady_date_of_birth', !empty($row) && $row->bady_date_of_birth ? $row->bady_date_of_birth : '')"/>
 	</td>
 </tr>
 <tr>
 	<td width="30%" class="text-right">{{ __('form.echography.next_meeting') }}</td>
 	<td>
-		<x-bss-form.input name="next_meeting" class="date-picker" hasIcon="right" icon="bx bx-calendar" :value="old('next_meeting', !empty($row) && $row->next_meeting ? $row->next_meeting : '')"/>
+		<x-bss-form.input name="next_meeting" class="date-picker" data-format="DD - MM - YYYY" hasIcon="right" icon="bx bx-calendar" :value="old('next_meeting', !empty($row) && $row->next_meeting ? $row->next_meeting : '')"/>
 	</td>
 </tr>
-{{-- <tr>
-	<td width="30%" class="text-right">HR ចង្វាក់បេះដូង</td>
-	<td>
-		<x-bss-form.input name="hr_heart_rate" :value="old('hr_heart_rate', !empty($row) && $row->hr_heart_rate ? $row->hr_heart_rate : '')"/>
-	</td>
-</tr> --}}
-{{-- <tr>
-	<td width="30%" class="text-right">VO</td>
-	<td>
-		<x-bss-form.input name="vo" :value="old('vo', !empty($row) && $row->vo ? $row->vo : '')"/>
-	</td>
-</tr> --}}
-{{-- <tr>
-	<td width="30%" class="text-right">ចង្វាក់បេះដូង</td>
-	<td>
-		<x-bss-form.input name="heart_rate" :value="old('heart_rate', !empty($row) && $row->heart_rate ? $row->heart_rate : '')"/>
-	</td>
-</tr> --}}
-{{-- <tr>
-	<td width="30%" class="text-right">សសៃឈាម</td>
-	<td>
-		<x-bss-form.input name="blood_vessels" :value="old('blood_vessels', !empty($row) && $row->blood_vessels ? $row->blood_vessels : '')"/>
-	</td>
-</tr>
-<tr>
-	<td width="30%" class="text-right">ដៃស្បូន</td>
-	<td>
-		<x-bss-form.input name="uterine_tube" :value="old('uterine_tube', !empty($row) && $row->uterine_tube ? $row->uterine_tube : 'ល្អ អត់មានដុំទឹក រឺដុំសាច់')"/>
-	</td>
-</tr> --}}
-{{-- <tr>
-	<td width="30%" class="text-right">ការលូតលាស់</td>
-	<td>
-		<x-bss-form.input name="growth" :value="old('growth', !empty($row) && $row->growth ? $row->growth : '')"/>
-	</td>
-</tr> --}}
-{{-- <tr>
-	<td class="text-right">មុន/ក្រោយ</td>
-	<td>
-		<div class="row">
-			<div class="col-sm-4">
-				<x-bss-form.input name="before_after" class="is_number" :value="old('before_after', !empty($row) && $row->before_after ? $row->before_after : '')"/>
-			</div>
-			<div class="col-sm-4 pl-0">
-				<x-bss-form.select name="before_after_unit">
-					<option value="day" {{ ((old('before_after_unit', $row->before_after_unit) == 'ថ្ងៃ')? 'selected' : '') }}>ថ្ងៃ</option>
-					<option value="-" {{ ((old('before_after_unit', $row->before_after_unit) == '-')? 'selected' : '') }}>-</option>
-				</x-bss-form.select>
-			</div>
-		</div>
-	</td>
-</tr> --}}

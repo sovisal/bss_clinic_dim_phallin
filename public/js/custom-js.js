@@ -622,10 +622,14 @@ $(document).ready(function () {
         icons: icons,
         format: "YYYY-MM",
     });
-    $(".date-picker").datetimepicker({
-        icons: icons,
-        format: "YYYY-MM-DD",
-        showTodayButton: true,
+    
+    $('.date-picker').each((_i, e) => {
+        var $_this = $(e);
+        $_this.datetimepicker({
+            icons: icons,
+            format: $_this.data('format') || "YYYY-MM-DD",
+            showTodayButton: true,
+        });
     });
     $(".date-time-picker").datetimepicker({
         icons: icons,

@@ -95,7 +95,7 @@
 			</div>
 			<div class="col-sm-4 pl-0">
 				<x-bss-form.select name="head_width_unit">
-					<option value="មម" {{ ((old('head_width_unit', $row->head_width_unit) == 'មម')? 'selected' : '') }}>មម</option>
+					<option value="mm" {{ ((old('head_width_unit', $row->head_width_unit) == 'mm')? 'selected' : '') }}>mm</option>
 					<option value="-" {{ ((old('head_width_unit', $row->head_width_unit) == '-')? 'selected' : '') }}>-</option>
 				</x-bss-form.select>
 			</div>
@@ -111,7 +111,7 @@
 			</div>
 			<div class="col-sm-4 pl-0">
 				<x-bss-form.select name="thigh_length_unit">
-					<option value="មម" {{ ((old('thigh_length_unit', $row->thigh_length_unit) == 'មម')? 'selected' : '') }}>មម</option>
+					<option value="mm" {{ ((old('thigh_length_unit', $row->thigh_length_unit) == 'mm')? 'selected' : '') }}>mm</option>
 					<option value="-" {{ ((old('thigh_length_unit', $row->thigh_length_unit) == '-')? 'selected' : '') }}>-</option>
 				</x-bss-form.select>
 			</div>
@@ -127,7 +127,7 @@
 			</div>
 			<div class="col-sm-4 pl-0">
 				<x-bss-form.select name="baby_belly_circumference_unit">
-					<option value="មម2" {{ ((old('baby_belly_circumference_unit', $row->baby_belly_circumference_unit) == 'មម')? 'selected' : '') }}>មម2</option>
+					<option value="mm2" {{ ((old('baby_belly_circumference_unit', $row->baby_belly_circumference_unit) == 'mm')? 'selected' : '') }}>mm2</option>
 					<option value="-" {{ ((old('baby_belly_circumference_unit', $row->baby_belly_circumference_unit) == '-')? 'selected' : '') }}>-</option>
 				</x-bss-form.select>
 			</div>
@@ -185,12 +185,12 @@
 <tr>
 	<td width="30%" class="text-right">{{ __('form.echography.bady_date_of_birth') }}</td>
 	<td>
-		<x-bss-form.input name="bady_date_of_birth" class="date-picker" hasIcon="right" icon="bx bx-calendar" :value="old('bady_date_of_birth', !empty($row) && $row->bady_date_of_birth ? $row->bady_date_of_birth : '')"/>
+		<x-bss-form.input name="bady_date_of_birth" class="date-picker" data-format="DD - MM - YYYY" hasIcon="right" icon="bx bx-calendar" :value="old('bady_date_of_birth', !empty($row) && $row->bady_date_of_birth ? $row->bady_date_of_birth : '')"/>
 	</td>
 </tr>
 <tr>
 	<td width="30%" class="text-right">{{ __('form.echography.next_meeting') }}</td>
 	<td>
-		<x-bss-form.input name="next_meeting" class="date-picker" hasIcon="right" icon="bx bx-calendar" :value="old('next_meeting', !empty($row) && $row->next_meeting ? $row->next_meeting : '')"/>
+		<x-bss-form.input name="next_meeting" class="date-picker" data-format="DD - MM - YYYY" hasIcon="right" icon="bx bx-calendar" :value="old('next_meeting', !empty($row) && $row->next_meeting ? $row->next_meeting : '')"/>
 	</td>
 </tr>

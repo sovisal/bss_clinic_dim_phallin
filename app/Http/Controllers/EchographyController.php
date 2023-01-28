@@ -23,7 +23,7 @@ class EchographyController extends Controller
             $data =  Echography::with(['address', 'doctor', 'doctor_requested', 'patient', 'type', 'address', 'gender'])
                 ->paraFilter();
 
-            return Datatables::of($data)
+            return DataTables::of($data)
                 ->addColumn('dt', function ($r) {
                     return [
                         'code' => d_link($r->code, "javascript:getDetail(" . $r->id . ", '" . route('para_clinic.echography.getDetail', 'Echography Detail') . "')"),
