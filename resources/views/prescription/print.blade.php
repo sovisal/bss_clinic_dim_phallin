@@ -5,7 +5,7 @@
 
 	<section class="print-preview-a4">
 		<header>
-			<x-para-clinic.print-header :row="$row" title="Prescription">
+			<x-para-clinic.print-header :row="$row" title="វេជ្ជបញ្ជា (Prescription)">
 				<tr>
 					<td width="15%"><b>Diagnosis</b></td>
 					<td colspan="5">: {{ $row->diagnosis }}</td>
@@ -93,7 +93,14 @@
             @endif
 		</section>
 		
-		<div class="bring-this-back">(សូមយកវេជ្ជបញ្ជានេះមកជាមួយ ពេលពិនិត្យលើកក្រោយ)</div>
+        <div class='text-center doctor_signature' style='position: absolute; right: 30px; bottom: 2.5cm;'>
+            <div class='KHMOULLIGHT'>គ្រូពេទ្យព្យាបាល</div>
+            <br/> <br /><br />
+            <div><span class='KHMOULLIGHT' style='font-size: 14px;'>វេជ្ជបណ្ឌិត.</span> <span class='KHMOULLIGHT' style='font-size: 16px;'>{{ auth()->user()->setting()->sign_name_kh }}</span></div>
+        </div>
+		<div class="bring-this-back" style="width: 100%;">
+            <p class="text-center">(សូមយកវេជ្ជបញ្ជានេះមកជាមួយ ពេលពិនិត្យលើកក្រោយ)</p>
+        </div>
 		<x-para-clinic.print-footer />
 	</section>
 

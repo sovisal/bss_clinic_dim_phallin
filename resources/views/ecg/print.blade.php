@@ -22,11 +22,8 @@
                 @endif
             </div>
         </section>
-        <div class="signature">
-            <div class="text-center">វេជ្ជបណ្ឌិត៖ <span class="KHMOULLIGHT">{{ d_obj($ecg, 'doctor', ['name_kh']) }}</span></div>
-            <img src="{{ asset('images/site/signature.png') }}" alt="">
-        </div>
-
+        
+        <x-para-clinic.print-doctor-signator />
         <x-para-clinic.print-footer />
     </section>
 

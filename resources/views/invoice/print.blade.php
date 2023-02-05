@@ -42,7 +42,7 @@
             </table>
         </section>
 
-        <!-- <div class="bring-this-back">(សូមយកវេជ្ជបញ្ជានេះមកជាមួយ ពេលពិនិត្យលើកក្រោយ)</div> -->
+        <x-para-clinic.print-doctor-signator />
         <x-para-clinic.print-footer />
     </section>
 </x-print-layout>
